@@ -1,5 +1,5 @@
-# GTH-Location-TeamName
-Project submission for the `Global Travel Hackathon in [Location], by [team-name] team`.
+# GTH-Belgrade-GitGud
+Project submission for the `Global Travel Hackathon in Belgrade, by GitGud team`.
 
 **Write one sentence explaining what does your project.**
 
