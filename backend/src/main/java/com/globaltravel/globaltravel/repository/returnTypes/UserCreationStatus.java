@@ -2,6 +2,8 @@ package com.globaltravel.globaltravel.repository.returnTypes;
 
 public class UserCreationStatus {
 
+    private String methond = "register";
+
     private boolean userCreationStatus;
 
     private String description;
@@ -23,5 +25,13 @@ public class UserCreationStatus {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getMethond() {
+        return methond;
+    }
+
+    public void setMethond(String methond) {
+        this.methond = methond;
     }
 }

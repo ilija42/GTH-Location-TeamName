@@ -54,8 +54,11 @@ public class DefaultLoginService implements BaseLoginService {
 
                 session.setLastsUntil(tokenExpirationDate);
                 session.setRole(userAndRolesRepository.findByUserId(u.getUserId()).get(0).getRole());
+                session.setUserId(u.getUserId());
 
                 sessionRepository.save(session);
+
+                loginStatus.setToken(session.getToken());
 
                 return loginStatus;
             }
