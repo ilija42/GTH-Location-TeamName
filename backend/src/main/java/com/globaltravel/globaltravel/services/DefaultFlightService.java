@@ -7,6 +7,7 @@ import com.globaltravel.globaltravel.repository.model.FlightAndUsers;
 import com.globaltravel.globaltravel.repository.returnTypes.AllFlightsStatus;
 import com.globaltravel.globaltravel.repository.returnTypes.CreateFlightAndUser;
 import com.globaltravel.globaltravel.repository.returnTypes.CreateFlightStatus;
+import com.globaltravel.globaltravel.repository.returnTypes.FlightStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,10 +42,22 @@ public class DefaultFlightService implements BaseFlightService{
 
         for(FlightAndUsers fau: flightAndUsers) {
             Optional<Flight> flight = flightRepository.findById(fau.getFlightCode());
-            allFlightsStatus.getFlights().add(flight.get());
+            FlightStatus flightStatus = new FlightStatus();
+
+            Flight f = flight.get();
+
+            flightStatus.setFlightCode(f.getFlightCode());
+            flightStatus.setFromLocation(f.getFromLocation());
+            flightStatus.setToLocation(f.getToLocation());
+            flightStatus.setDepartureTime(f.getDepartureTime());
+            flightStatus.setArrivalTimve(f.getArrivalTimve());
+            flightStatus.setPlane(f.getPlane());
+            flightStatus.calculateTimeToArrive();
+
+            allFlightsStatus.getFlights().add(flightStatus);
         }
 
-
+        allFlightsStatus.setStatus(true);
         return allFlightsStatus;
     }
 

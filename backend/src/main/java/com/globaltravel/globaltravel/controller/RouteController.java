@@ -2,6 +2,9 @@ package com.globaltravel.globaltravel.controller;
 
 
 import com.globaltravel.globaltravel.repository.returnTypes.RouteStatus;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -76,6 +79,8 @@ public class RouteController {
 
             connection.disconnect();
 
+//            JsonObject object = new Gson().fromJson(content.toString(), JsonObject.class);
+//            return object;
             routeStatus.setResponse(content.toString());
 
         } catch (Exception e) {

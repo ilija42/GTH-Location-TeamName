@@ -8,7 +8,7 @@ public class AllFlightsStatus {
 
     private String method = "allFlights";
 
-    private ArrayList<Flight> flights;
+    private ArrayList<FlightStatus> flights;
 
     private boolean status;
 
@@ -22,11 +22,11 @@ public class AllFlightsStatus {
         this.method = method;
     }
 
-    public ArrayList<Flight> getFlights() {
+    public ArrayList<FlightStatus> getFlights() {
         return flights;
     }
 
-    public void setFlights(ArrayList<Flight> flights) {
+    public void setFlights(ArrayList<FlightStatus> flights) {
         this.flights = flights;
     }
 
